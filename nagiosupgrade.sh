@@ -36,5 +36,5 @@ echo "Starting Services"
 systemctl daemon-reload
 systemctl restart nagios.service apache2.service
 # check the errors in nagios configuration
-/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg | tail -c 3
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 echo "Installation Completed....!"
