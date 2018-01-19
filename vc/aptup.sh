@@ -5,7 +5,6 @@ if ! [ $(id -u) = 0 ]; then
    exit 1
 fi
 
-
 #Script for auto update/autoremove and dist-upgrade.
 
 apt-get autoremove
