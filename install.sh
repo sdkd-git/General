@@ -51,14 +51,14 @@ then
   echo -e "${RED}Could not resolve DNS. Stopping further actions..!\n${NC}" >&2
   exit 3
 fi
-echo -e "${LGRN}Adding mongo Key${NC}"
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-echo -e "${LGRN}Adding mongodb to repo list${NC}"
-echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+# echo -e "${LGRN}Adding mongo Key${NC}"
+# apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+# echo -e "${LGRN}Adding mongodb to repo list${NC}"
+# echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 # 3. Update the list of available packages
 apt-get update
 #
-apt-get install apache2 mongodb-org php5 php5-dev libapache2-mod-php5 php5-curl php5-gd apache2-threaded-dev build-essential php-pear
+apt-get install apache2 mongodb-org php libapache2-mod-php php-mcrypt php-mysql php-cli
 systemctl start mongod
 systemctl enable mongodb
 ufw allow 27017
