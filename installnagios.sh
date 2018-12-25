@@ -1,9 +1,9 @@
 #!/bin/bash
+i#Check is user is running with permission
 if ! [ $(id -u) = 0 ]; then
-   echo "The script need to be run as root." >&2
-   exit 1
+  echo -e "\n${YLLO}The script need to be run as root.${NC}" >&2
+  exit 1
 fi
-
 #Install Prerequisites
 apt-get install apache2
 a2enmod rewrite

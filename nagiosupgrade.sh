@@ -1,15 +1,9 @@
 #!/bin/bash
-
+#Check is user is running with permission
 if ! [ $(id -u) = 0 ]; then
-   echo "The script need to be run as root." >&2
-   exit 1
+  echo -e "\n${YLLO}The script need to be run as root.${NC}" >&2
+  exit 1
 fi
-
-#if [ $SUDO_USER ]; then
-#    real_user=$SUDO_USER
-#else
-#    real_user=$(whoami)
-#fi
 #Stop Nagios and Web Services
 echo -e "Stopping Services"
 systemctl stop nagios.service
